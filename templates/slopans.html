@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block body %}
+{% if sx %}
+    <div class="wrtng-ans">
+    Slope with x-axis:&nbsp; {{ sx }} <br>
+    Slope with y-axis:&nbsp; {{ sy }}<br>
+    Slope with z-axis:&nbsp; {{ sz }}<br>
+    </div>
+{% elif slp %}
+    <div class="wrtng-ans">
+        Slope:&nbsp; {{ slp }} <br>
+        Angle with +ve x-axis:&nbsp; {{ angl }}&deg; <br>
+        equation of line:&nbsp; {{ func }} <br>
+    </div>
+    {% if graph %}
+    <img src="data:image/png;base64, {{graph|safe}}">
+    {% endif %}
+{% elif slope %}
+    <div class="wrtng-ans">
+    Slope at point ({{ point }}):&nbsp; {{ slope }} {% if dmsg %} &nbsp; [ I = &radic;-1 ] {% endif %}
+    </div>
+    {% if graph %}
+        <img src="data:image/png;base64, {{graph|safe}}">
+    {% endif %}    
+    <script>
+        document.getElementById('point').style.display = 'none';
+        document.getElementById('equtin').style.display = 'block';
+        var eqbtn = document.getElementById('slct2');
+        eqbtn.style.color = 'white';
+        eqbtn.style.backgroundColor = 'black';
+        var pntbtn = document.getElementById('slct1');
+        pntbtn.style.color = 'black';
+        pntbtn.style.backgroundColor = 'white';
+    </script>
+{% else %}
+{% endif %}
+{% endblock body %}
+
+

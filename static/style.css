@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+/* font-family: 'Roboto Slab', serif;
+font-family: 'Rubik', sans-serif; */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+}
+*{
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
+}
+
+#equtin{
+    display: none;
+}
+
+#alert{
+    background-color: black;
+    color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    padding: 3px 5px;
+    text-align: left;
+}
+.slct{
+    margin-bottom: 20px;
+}
+.btn{
+    padding: 4px;
+    font-size: 12px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#slct1{
+    color: white;
+    background-color: black;
+}
+#slct2,#slct1{
+    margin: 1px 4px;
+}
+
+
+.point{
+    width: 65px;
+}
+#eqn{
+    width: 130px;
+    max-width: 90%;
+}
+#eqn, .point{
+    padding: 4px;
+    margin-bottom: 5px;
+    padding: 4px;
+    margin-bottom: 5px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 10px;
+    border: 1px solid black;
+}
+/* .btn:hover,input:hover{
+    box-shadow: rgba(0, 0, 0, 0.56) 10px 22px 70px 4px;
+} */
+
+.submt{
+    font-family: 'Rubik', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 6px;
+    letter-spacing: 1.5px;
+    margin: 20px 0;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.submt:hover{
+    background-color: black;
+    color: white;
+}
+
+.wrtng-ans{
+    padding: 10px 2%;
+    font-size: 14px;
+}
+img{
+    display: block;
+    margin: auto;
+    max-width: 500px;
+    width: 90%;
+  }
+
+h2,h3{
+  font-size: 25px;
+}
+.wrtng
+{
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 15px 3%;
+    font-weight: 300;
+    font-size: 13px;
+}
+.footer-distributed {
+  bottom: 0;
+  background-color: #292c2f;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font: normal 16px sans-serif;
+  padding: 0px 0px;
+}
+
+
+/* Footer links */
+
+.footer-distributed p.footer-links {
+  font-size: 13px;
+  color: #ffffff;
+  margin: 0 0 1px;
+}
+
+.footer-distributed p.footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "·";
+  font-size: 19px;
+  color: #fff;
+  display: inline-block;
+}
+.footer-distributed p.footer-links a:hover{text-decoration:underline;}
+
+/* Media Queries */
+
+@media (max-width: 600px) {
+  .footer-distributed .footer-left, .footer-distributed .footer-right {
+    text-align: center;
+  }
+  .footer-distributed .footer-left p.footer-links {
+    line-height: 1.8;
+  }
+}

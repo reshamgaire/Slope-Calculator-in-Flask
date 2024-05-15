@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="slope calculator, find the slope calculator, point slope calculator, slope calculator from equation, find slope calculator, slope calculator from points, graph slope calculator, finding slope calculator, slope calculator 2 points, line slope calculator, slope intercept form calculator, tangent line slope calculator, slope intercept form">
+    <meta name="description" content="A free, simple, and fast slope calculator to find the slope of a line (by points) and a curve (by equation) with graphs accurately.">
+    <link rel="icon" type="images/x-icon" href="static/slope-calculator.ico">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Slope Calculator | Simple, Fast, and Accurate</title>
+</head>
+
+<body>
+    {% if msg %}
+    <div id="alert">
+        {{ msg }}
+    </div>
+    {% endif %}
+    <header>
+        <h1>Slope Calculator</h1>
+        <h3>Find Slope By</h3>
+    </header>
+
+    <div class="slct">
+        <button id="slct1" class="btn" type="button" onclick="showpnt()">Two points (straight line)</button>
+        <button id="slct2" class="btn" type="button" onclick="showeqn()">Equation of curve</button>
+    </div>
+
+    <div id="point">
+        <form action="/points" method="post">
+            <div>
+                First point (separated by comma): <input value="{{ xy1 }}" name="xy1" class="point" placeholder="x1,y1">
+            </div>
+                Second point (separated by comma): <input value="{{ xy2 }}" name="xy2" class="point" placeholder="x2,y2">
+            <div>
+                <input type="submit" class="submt" value="SUBMIT">
+            </div>
+        </form>
+    </div>
+
+    <div id="equtin">
+        <form action="/equation" method="post">
+            <div>
+                Enter Equation: <input value="{{ eq }}" type="text" id="eqn" name="equation" placeholder="y=6x-x^2">
+            </div>
+                Find slope at (point): <input value="{{ point }}" type="text" class="point" name="slplc" placeholder="1,5">
+            <div>
+                <input type="submit" class="submt" value="SUBMIT">
+            </div>
+        </form>
+    </div>
+    {% block body %}
+    {% endblock body %}
+
+    <div class="wrtng">
+        <h2>What is Slope Calculator</h2>
+
+<p>A slope calculator is a mathematical tool that calculates the slope of a line and the slope of a tangent at a point of a curve. This calculator will tell you that if (1,1) and (2,2) are any two points of a line then the slope made by the line with the x-axis is 1. It will also tell you that the slope of a tangent at point (1,5) of curve y=6x-x^2 is 4. It helps you to understand slopes.</p>
+
+<p>This calculator has two sections, first, helps you calculate the slope of a line from two points. It lets you enter your values of two coordinates of a line (x1, y1) and (x2, y2). Then displays your answer for the slope of a line, the angle made by the line with the positive x-axis, as well as find the equation of a line.</p>
+
+<p>You can also enter the coordinates of a point of a line in a 3-dimensional space (x1, y1, z1) and (x2, y2, z2). Then it will provide you with the slope of a line with an x-axis, y-axis, and z-axis respectively. This is an amazing feature of this calculator. By which you can easily find how many angles that line makes with positive x-, y- and z-axis.</p>
+
+<p>In the second section, you can enter the equation of a curve (y=x^2) and one point (2, 4) of a curve. Then this calculator will provide you with the slope of a tangent line at that point. This is really helpful for the students as well as for professionals. In this section, you can leave the 'y-coordinate' value blank and only enter the 'x-coordinate' value. This calculator will automatically find the point and 'y-coordinate' value of that point.</p>
+
+<h2>What is slope</h2>
+<p>The steepness of a line is usually measured in units called "rise over run" (R/R). Which means how many units rise (vertical change) divided by how many units run (horizontal change). This value is called slope. The Slope Calculator can help you find this value. Mathematically, the slope can be defined as the tangent of an angle made by any line with the x-axis (positive).</p>
+<p>Also slope can be defined as the measure of the steepness or gradient of a line, or how much it inclines up and down with positive x-axis. The slope is usually denoted by m. Which is calculated by dividing the vertical change in y-coordinates by the horizontal change in x-coordinates, or y/x.</p>
+<p>For example, if we have an increase in height from 1 meter to 3 meters, then we have an increase in height of 2 meters. Also, the horizontal distance traveled of 3 meters, so our slope would be 2/3. The slope is always given as a number, which means that it can be positive, negative, or zero. It is important to know about the slope of a line, as it has high application in geometry and algebraic math.</p>
+
+<h3>Slope of a line</h3>
+<p>Any straight line has a basic linear equation in slope intercept form 'y = mx + c'. Where 'y' is y-coordinate, 'x' is x-coordinate, 'c' is the y-intercept, and 'm' is the slope. 'm' and 'c' can be easily calculated from two points on a line. As we have talked before, the slope of a line is given by dividing the vertical difference by the horizontal difference between two points.</p>
+<p>So, the equation for calculating the slope of a line is: <br>
+slope = (rise)/(run) or <br>
+Slope = (y2 - y1)/(x2 - x1) <br>
+Where y2 and x2 are coordinating for one point, and y1 and x1 are coordinates for another point.</p>
+
+<h3>The slope of a curve at a point</h3>
+<p>Mainly, a slope can be calculated by finding two points on a line or curve. Then using their difference in height divided by their difference in horizontal distance.</p>
+<p>A slope of a curve is the rate at which a line goes up or down or the degree of incline. It is a measure of how much the value of a function changes over one unit interval. Mathematically, it can be represented as Δy/Δx or dy/dx. For example, if y= 6x-x^2 is a curve then its slope can be calculated by differentiating both sides with respect to x.</p>
+<p>So, slope formula will be, <br>
+Slope (m) = dy/dx <br>
+dy/dx = d/dx (6x-x^2) <br>
+so, m = 6-2x</p>    
+</div>
+
+<footer class="footer-distributed">
+	<div class="footer-left">
+		<p class="footer-links">
+			<a href="/about">About</a>
+			<a href="/contact">Contact</a>
+			<a href="/terms">Terms</a>
+			<a href="/privacy">Privacy</a>
+		</p>
+		<!-- <p>Company Name &copy; 2015</p> -->
+	</div>
+</footer>
+    <script type="text/javascript">
+        function showeqn() {
+            document.getElementById('point').style.display = 'none';
+            document.getElementById('equtin').style.display = 'block';
+            var eqbtn = document.getElementById('slct2');
+            eqbtn.style.color = 'white';
+            eqbtn.style.backgroundColor = 'black';
+            var pntbtn = document.getElementById('slct1');
+            pntbtn.style.color = 'black';
+            pntbtn.style.backgroundColor = 'white';
+
+        }
+        function showpnt() {
+            document.getElementById('point').style.display = 'block';
+            document.getElementById('equtin').style.display = 'none';
+            var pntbtn = document.getElementById('slct1');
+            pntbtn.style.color = 'white';
+            pntbtn.style.backgroundColor = 'black';
+            var eqbtn = document.getElementById('slct2');
+            eqbtn.style.color = 'black';
+            eqbtn.style.backgroundColor = 'white';
+        } 
+        </script>
+    
+    {% if cerr %}
+        <script>
+            document.getElementById('point').style.display = 'none';
+            document.getElementById('equtin').style.display = 'block';
+            var eqbtn = document.getElementById('slct2');
+            eqbtn.style.color = 'white';
+            eqbtn.style.backgroundColor = 'black';
+            var pntbtn = document.getElementById('slct1');
+            pntbtn.style.color = 'black';
+            pntbtn.style.backgroundColor = 'white';
+        </script>
+    {% endif %}
+</body>
+
+</html>
